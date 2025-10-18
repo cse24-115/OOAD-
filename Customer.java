@@ -5,36 +5,36 @@ public abstract class Customer {
     protected boolean login;
     protected Login loginInstance;
 
-    public Customer(String idNumber, String phone, String email) {
-        this.idNumber = idNumber;
+    public Customer(String id, String phone, String email) {
+        this.idNumber = id;
         this.phone = phone;
         this.email = email;
-        this.login = false;
-        this.loginInstance = new Login(idNumber, "defaultpassword", this);
+        login = false;
+
+        this.loginInstance = new Login(idNumber, "", this);
     }
 
     public String getIdNumber() { return idNumber; }
-    public String getPhone() { return phone; }
-    public String getEmail() { return email; }
-    public boolean isLogin() { return login; }
-    protected void setLogin(boolean login) { this.login = login; }
-    public Login getLoginInstance() { return loginInstance; }
+    public String getPhone()    { return phone; }
+    public String getEmail()    { return email; }
+    public boolean isLogin()    { return login; }
+    protected void setLogin(boolean b) { login = b; }
+    public Login getLoginInstance()    { return loginInstance; }
 
     public abstract void openAccount();
-    public abstract double viewBalance(AccountController accountController, String accountNumber);
+    public abstract double viewBalance(String acc);
 
-    public boolean depositFunds(AccountController accountController, String accountNumber, double amount) {
-        if (isLogin() && amount > 0) {
-            accountController.deposit(accountNumber, amount);
+    public boolean depositFunds(Account acc, double amt) {
+        if (isLogin() && acc != null && amt > 0) {
+            acc.deposit(amt);
             return true;
         }
         return false;
     }
 
-    public boolean withdrawFunds(AccountController accountController, String accountNumber, double amount) {
-        if (isLogin() && amount > 0) {
-            return accountController.withdraw(accountNumber, amount);
-        }
+    public boolean withdrawFunds(Account acc, double amt) {
+        if (isLogin() && acc != null && amt > 0)
+            return acc.withdraw(amt);
         return false;
     }
-} 
+}

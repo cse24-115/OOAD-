@@ -8,30 +8,31 @@ public abstract class Account {
 
     public Account(String accountNumber, double balance, String branch, Date openedDate) {
         this.accountNumber = accountNumber;
-        this.balance = (balance >= 0) ? balance : 0.0;
+        this.balance = balance;
         this.branch = branch;
-        this.openedDate = new Date(openedDate.getTime());
+        this.openedDate = openedDate;
     }
 
     public String getAccountNumber() { return accountNumber; }
-    public double getBalance() { return balance; }
-    protected void setBalance(double balance) { this.balance = (balance >= 0) ? balance : 0.0; }
-    public String getBranch() { return branch; }
-    public Date getOpenedDate() { return new Date(openedDate.getTime()); }
+    public double getBalance()        { return balance; }
+    public void setBalance(double b)  { balance = b; }
+    public String getBranch()         { return branch; }
+    public Date getOpenedDate()       { return openedDate; }
 
-    public void deposit(double amount) {
-        if (amount > 0) {
-            this.balance += amount;
-        }
+    public void deposit(double amt) {
+        if (amt > 0) balance += amt;
     }
 
-    public boolean withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            this.balance -= amount;
-            return true;
-        }
-        return false;
-    }
+    public abstract boolean withdraw(double amt);
 
-    public abstract void updateOverdraftLimit(double limit);
+    public abstract double calculateMonthlyInterest();
+
+    public void updateOverdraftLimit(double limit) { /* default empty */ }
+
+    public String toString() {
+        return "Account No: " + accountNumber +
+                "\nBalance: P" + balance +
+                "\nBranch: " + branch +
+                "\nOpened: " + openedDate;
+    }
 }

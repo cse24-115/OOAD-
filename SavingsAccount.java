@@ -14,7 +14,7 @@ public class SavingsAccount extends Account implements InterestBearing {
     @Override
     public boolean withdraw(double amount) {
         if (amount > 0 && amount <= getBalance() - 100.0) { // Minimum balance of 100
-            return super.withdraw(amount);
+            return false;
         }
         System.out.println("Withdrawal failed: Minimum balance of 100 required!");
         return false;
@@ -23,6 +23,11 @@ public class SavingsAccount extends Account implements InterestBearing {
     @Override
     public double calculateMonthlyInterest() {
         return getBalance() * interestRate;
+    }
+
+    @Override
+    public double calculateInterest() {
+        return 0;
     }
 
     @Override

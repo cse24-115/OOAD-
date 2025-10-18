@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="BankingController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <!-- Title -->
+    <Label text="Customer Banking" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <!-- Open account -->
+    <HBox spacing="5" alignment="CENTER">
+        <ComboBox fx:id="cbType" promptText="Account type"/>
+        <TextField fx:id="tfBranch" promptText="Branch"/>
+        <Button fx:id="btnOpen" text="Open Account" onAction="#handleOpen"/>
+    </HBox>
+
+    <!-- Deposit / Withdraw / Interest -->
+    <HBox spacing="5" alignment="CENTER">
+        <TextField fx:id="tfAmount" promptText="Amount" prefWidth="100"/>
+        <Button fx:id="btnDeposit" text="Deposit" onAction="#handleDeposit" disable="true"/>
+        <Button fx:id="btnWithdraw" text="Withdraw" onAction="#handleWithdraw" disable="true"/>
+        <Button fx:id="btnInterest" text="Add Monthly Interest" onAction="#handleMonthlyInterest" disable="true"/>
+    </HBox>
+
+    <!-- Balance -->
+    <Label fx:id="lblBalance" text="Balance: ---" style="-fx-font-size: 14px;"/>
+
+    <!-- Log -->
+    <TextArea fx:id="taLog" prefRowCount="4" editable="false"
+              style="-fx-font-family: monospace;" maxWidth="400"/>
+</VBox>

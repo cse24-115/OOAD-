@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Gotlhelelele Banking" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Button text="Login as Customer" onAction="#goCustomer" prefWidth="200"/>
+    <Button text="Login as Employee" onAction="#goEmployee" prefWidth="200"/>
+    <Button text="Exit" onAction="#exit" prefWidth="200"/>
+</VBox>
