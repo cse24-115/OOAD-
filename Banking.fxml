@@ -4,33 +4,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="BankingController">
+<VBox spacing="20" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="BankingController"
+      stylesheets="@style.css"
+      styleClass="root">
 
-    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
 
-    <!-- Title -->
-    <Label text="Customer Banking" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <Label text="Customer Banking" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
 
-    <!-- Open account -->
-    <HBox spacing="5" alignment="CENTER">
-        <ComboBox fx:id="cbType" promptText="Account type"/>
-        <TextField fx:id="tfBranch" promptText="Branch"/>
-        <Button fx:id="btnOpen" text="Open Account" onAction="#handleOpen"/>
-    </HBox>
+    <VBox spacing="10" alignment="CENTER" styleClass="card">
+        <HBox spacing="10" alignment="CENTER">
+            <ComboBox fx:id="cbType" promptText="Account Type" prefWidth="150"/>
+            <TextField fx:id="tfBranch" promptText="Branch" prefWidth="150"/>
+            <Button fx:id="btnOpen" text="Open Account" onAction="#handleOpen" prefWidth="130"/>
+        </HBox>
 
-    <!-- Deposit / Withdraw / Interest -->
-    <HBox spacing="5" alignment="CENTER">
-        <TextField fx:id="tfAmount" promptText="Amount" prefWidth="100"/>
-        <Button fx:id="btnDeposit" text="Deposit" onAction="#handleDeposit" disable="true"/>
-        <Button fx:id="btnWithdraw" text="Withdraw" onAction="#handleWithdraw" disable="true"/>
-        <Button fx:id="btnInterest" text="Add Monthly Interest" onAction="#handleMonthlyInterest" disable="true"/>
-    </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="tfAmount" promptText="Amount" prefWidth="100"/>
+            <Button fx:id="btnDeposit" text="Deposit" onAction="#handleDeposit" disable="true"/>
+            <Button fx:id="btnWithdraw" text="Withdraw" onAction="#handleWithdraw" disable="true"/>
+            <Button fx:id="btnInterest" text="Add Monthly Interest" onAction="#handleMonthlyInterest" disable="true"/>
+        </HBox>
 
-    <!-- Balance -->
-    <Label fx:id="lblBalance" text="Balance: ---" style="-fx-font-size: 14px;"/>
+        <Label fx:id="lblBalance" text="Balance: ---" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <TextArea fx:id="taLog" prefRowCount="4" editable="false" prefWidth="400"/>
+    </VBox>
 
-    <!-- Log -->
-    <TextArea fx:id="taLog" prefRowCount="4" editable="false"
-              style="-fx-font-family: monospace;" maxWidth="400"/>
+    <Label text="© 2025 Gotlhelelele Banking. All rights reserved." styleClass="status-bar"/>
 </VBox>

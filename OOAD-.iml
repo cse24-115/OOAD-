@@ -18,5 +18,6 @@
         <jarDirectory url="file://$USER_HOME$/Downloads/openjfx-25_windows-x64_bin-sdk (1)/javafx-sdk-25/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="xerial.sqlite.jdbc" level="project" />
   </component>
 </module>

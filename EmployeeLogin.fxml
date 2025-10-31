@@ -4,18 +4,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/17"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeLoginController">
-    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+<VBox spacing="20" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="EmployeeLoginController"
+      stylesheets="@style.css"
+      styleClass="root">
 
-    <Label text="Employee Login" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-    <HBox spacing="5" alignment="CENTER">
-        <Label text="ID:"/>
-        <TextField fx:id="tfId" prefWidth="120"/>
-        <Label text="Password:"/>
-        <PasswordField fx:id="tfPw" prefWidth="120"/>
-        <Button text="Login" onAction="#handleLogin"/>
-    </HBox>
-    <TextArea fx:id="taLog" prefRowCount="3" editable="false"
-              style="-fx-font-family: monospace;"/>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Employee Login" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="10" alignment="CENTER" styleClass="card">
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="ID:"/>
+            <TextField fx:id="tfId" promptText="Enter Employee ID" prefWidth="180"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Password:"/>
+            <PasswordField fx:id="tfPw" promptText="Enter Password" prefWidth="180"/>
+        </HBox>
+        <Button text="Login" onAction="#handleLogin" prefWidth="120"/>
+        <TextArea fx:id="taLog" prefRowCount="3" editable="false" prefWidth="250"/>
+    </VBox>
+
+    <Label text="© 2025 Gotlhelelele Banking. All rights reserved." styleClass="status-bar"/>
 </VBox>

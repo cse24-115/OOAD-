@@ -1,0 +1,111 @@
+/* ===== General Scene Styling ===== */
+.root {
+    -fx-background-color: #F5F5F5; /* soft gray background */
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* ===== Labels ===== */
+.label {
+    -fx-text-fill: #1A237E; /* deep navy blue */
+    -fx-font-size: 14px;
+}
+
+/* Headings (for window titles) */
+.label[style*="bold"] {
+    -fx-text-fill: #1A237E;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* ===== Buttons ===== */
+.button {
+    -fx-background-color: #283593; /* royal blue */
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 8 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0.3, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #3949AB; /* lighter blue on hover */
+}
+
+.button:pressed {
+    -fx-background-color: #1A237E;
+}
+
+/* ===== TextFields and PasswordFields ===== */
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #283593;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #FFD700; /* gold focus highlight */
+    -fx-effect: dropshadow(gaussian, rgba(255,215,0,0.4), 4, 0.5, 0, 0);
+}
+
+/* ===== ComboBox ===== */
+.combo-box {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #283593;
+}
+
+.combo-box:focused {
+    -fx-border-color: #FFD700;
+}
+
+/* ===== TextArea (Logs) ===== */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-family: "Consolas", monospace;
+}
+
+/* ===== VBox / HBox Containers ===== */
+.vbox, .hbox {
+    -fx-alignment: center;
+}
+
+/* ===== Card Container ===== */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #E0E0E0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0.3, 0, 3);
+    -fx-padding: 15;
+}
+
+/* ===== Footer / Status Bar ===== */
+.status-bar {
+    -fx-background-color: #1A237E;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 4 10;
+    -fx-alignment: center;
+}
+
+/* ===== TableView (if used later) ===== */
+.table-view {
+    -fx-border-color: #1A237E;
+    -fx-background-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #283593;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
